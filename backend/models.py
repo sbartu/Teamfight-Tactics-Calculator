@@ -9,6 +9,9 @@ class Champion(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        db_table = 'champions'
+
 
 class Item(models.Model):
     name = models.CharField(max_length=500)
@@ -16,3 +19,6 @@ class Item(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        db_table = 'items'

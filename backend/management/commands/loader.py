@@ -7,13 +7,13 @@ class Command(BaseCommand):
     help = 'our help string comes here'
 
     def _create_tags(self):
-        with open('../../../public/static/champions.json') as f:
+        with open('champions.json') as f:
             d = json.load(f)
             for entry in d:
                 new_champ = Champion(name=entry, data=d[entry])
                 new_champ.save()
 
-        with open('../../../public/static/items.json') as f:
+        with open('items.json') as f:
             d = json.load(f)
             for entry in d:
                 new_item = Item(name=entry, data=d[entry])
