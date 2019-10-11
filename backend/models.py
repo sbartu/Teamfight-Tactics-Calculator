@@ -1,17 +1,18 @@
 from django.db import models
+from django_mysql.models import JSONField
 
 
 class Champion(models.Model):
     name = models.CharField(max_length=500)
-    imagefile = models.FileField(upload_to='images/', null=True, verbose_name="")
+    data = JSONField()
 
     def __str__(self):
-        return self.name + ": " + str(self.imagefile)
+        return self.name
+
 
 class Item(models.Model):
     name = models.CharField(max_length=500)
-    imagefile = models.FileField(upload_to='images/', null=True, verbose_name="")
+    data = JSONField()
 
     def __str__(self):
-        return self.name + ": " + str(self.imagefile)
-
+        return self.name

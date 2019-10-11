@@ -1,0 +1,257 @@
+{
+  "all": {
+    "1": [
+      "Gnar",
+      "Yasuo",
+      "Anivia",
+      "Shyvana",
+      "Akali"
+    ],
+    "2": [
+      "Brand",
+      "Evelynn",
+      "Draven",
+      "Jinx",
+      "Swain",
+      "Chogath",
+      "AurelionSol",
+      "Vayne",
+      "Lucian",
+      "Vi",
+      "TwistedFate",
+      "Kayle",
+      "Sejuani",
+      "Kennen",
+      "Blitzcrank",
+      "Gangplank",
+      "Kassadin",
+      "Zed",
+      "Poppy",
+      "Kaisa",
+      "Pantheon"
+    ],
+    "3": [
+      "Rengar",
+      "Shen",
+      "MissFortune",
+      "Pyke",
+      "Lissandra",
+      "Ashe",
+      "Varus",
+      "Aatrox",
+      "Karthus",
+      "Kindred",
+      "Lulu",
+      "Ahri",
+      "Leona",
+      "Veigar",
+      "Khazix",
+      "Nidalee",
+      "Katarina",
+      "Morgana",
+      "Warwick",
+      "Braum"
+    ],
+    "4": [
+      "Volibear",
+      "Garen",
+      "Darius",
+      "Camille",
+      "Jayce",
+      "Fiora",
+      "RekSai",
+      "Graves"
+    ],
+    "5": [
+      "Mordekaiser",
+      "Elise",
+      "Tristana"
+    ]
+  },
+  "early": {
+    "1": [
+      "AurelionSol",
+      "Aatrox",
+      "Brand",
+      "Kennen",
+      "Braum",
+      "Graves",
+      "Leona",
+      "Nidalee",
+      "Sejuani",
+      "Vayne"
+    ],
+    "2": [
+      "Morgana",
+      "Elise",
+      "Yasuo",
+      "MissFortune",
+      "Anivia",
+      "Gangplank",
+      "Khazix",
+      "Lulu",
+      "RekSai",
+      "Tristana",
+      "Zed"
+    ],
+    "3": [
+      "Chogath",
+      "Ahri",
+      "Draven",
+      "Kassadin",
+      "Lissandra",
+      "Poppy",
+      "Shen",
+      "Veigar"
+    ],
+    "4": [
+      "Shyvana",
+      "Ashe",
+      "Kayle",
+      "Volibear",
+      "Blitzcrank",
+      "Garen",
+      "Kindred",
+      "Mordekaiser",
+      "Rengar",
+      "Varus"
+    ],
+    "5": [
+      "Darius",
+      "Fiora",
+      "Gnar",
+      "Karthus",
+      "Akali",
+      "Evelynn",
+      "Katarina",
+      "Lucian",
+      "Pyke",
+      "Swain",
+      "Warwick"
+    ]
+  },
+  "mid": {
+    "1": [
+      "Darius",
+      "Fiora",
+      "Gnar",
+      "Karthus",
+      "Akali",
+      "Evelynn",
+      "Katarina",
+      "Lucian",
+      "Pyke",
+      "Swain",
+      "Warwick"
+    ],
+    "2": [
+      "Chogath",
+      "Ahri",
+      "Draven",
+      "Kassadin",
+      "Lissandra",
+      "Poppy",
+      "Shen",
+      "Veigar"
+    ],
+    "3": [
+      "AurelionSol",
+      "Brand",
+      "Kennen",
+      "Braum",
+      "Graves",
+      "Leona",
+      "Nidalee",
+      "Sejuani",
+      "Vayne"
+    ],
+    "4": [
+      "Shyvana",
+      "Ashe",
+      "Kayle",
+      "Volibear",
+      "Lulu",
+      "Blitzcrank",
+      "Garen",
+      "Kindred",
+      "Mordekaiser",
+      "Rengar",
+      "Varus"
+    ],
+    "5": [
+      "Morgana",
+      "Aatrox",
+      "Elise",
+      "Yasuo",
+      "MissFortune",
+      "Anivia",
+      "Gangplank",
+      "Khazix",
+      "RekSai",
+      "Tristana",
+      "Zed"
+    ]
+  },
+  "late": {
+    "1": [
+      "Darius",
+      "Aatrox",
+      "Fiora",
+      "Gnar",
+      "Karthus",
+      "Akali",
+      "Evelynn",
+      "Katarina",
+      "Lucian",
+      "Pyke",
+      "Swain",
+      "Warwick"
+    ],
+    "2": [
+      "Shyvana",
+      "Ashe",
+      "Kayle",
+      "Volibear",
+      "Blitzcrank",
+      "Garen",
+      "Kindred",
+      "Mordekaiser",
+      "Rengar",
+      "Varus"
+    ],
+    "3": [
+      "Chogath",
+      "Ahri",
+      "Draven",
+      "Kassadin",
+      "Lissandra",
+      "Poppy",
+      "Shen",
+      "Veigar"
+    ],
+    "4": [
+      "Morgana",
+      "Elise",
+      "Yasuo",
+      "MissFortune",
+      "Anivia",
+      "Gangplank",
+      "Khazix",
+      "Lulu",
+      "RekSai",
+      "Tristana",
+      "Zed"
+    ],
+    "5": [
+      "AurelionSol",
+      "Brand",
+      "Kennen",
+      "Braum",
+      "Graves",
+      "Leona",
+      "Nidalee",
+      "Sejuani",
+      "Vayne"
+    ]
+  }
+}
