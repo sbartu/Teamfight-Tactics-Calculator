@@ -1,5 +1,5 @@
 from django.core.management.base import BaseCommand
-from backend.models import Champion, Item
+from tftcalc.models import Champion, Item
 import json
 
 
