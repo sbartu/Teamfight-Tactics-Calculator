@@ -15,6 +15,7 @@ gunicorn = "*"
 django-heroku = "*"
 mysqlclient = "*"
 django-cors-headers = "*"
+pylint-django = "*"
 
 [requires]
 python_version = "3.6"

@@ -15,8 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from rest_framework import routers
+from tftcalc import views
+
+
+router = routers.DefaultRouter()
+router.register(r'champions', views.ChampionViewSet)
+router.register(r'items', views.ItemViewSet)
 
 urlpatterns = [
+
     path('tftcalc/', include('tftcalc.urls')),
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
 ]
