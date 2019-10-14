@@ -14,7 +14,7 @@ class ChampionViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = Champion.objects.all().order_by('-date_joined')
+    queryset = Champion.objects.all()
     serializer_class = ChampionSerializer
 
 
