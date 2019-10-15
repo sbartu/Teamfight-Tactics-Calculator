@@ -11,7 +11,9 @@ class App extends React.Component {
     this.state = {
       ChampionPool: [],
       ItemPool: [],
-      SelectedItems: []
+      SelectedItems: [],
+      Origins: [],
+      Classes: []
     };
     this.fetchData = this.fetchData.bind(this);
   }
@@ -30,19 +32,49 @@ class App extends React.Component {
       .get("/api/items/")
       .then(res => this.setState({ ItemPool: res.data }))
       .catch(err => console.log(err)); // eslint-disable-line no-console
+
+    axios
+      .get("/api/classes/")
+      .then(res => this.setState({ Classes: res.data }))
+      .catch(err => console.log(err)); // eslint-disable-line no-console
+
+    axios
+      .get("/api/origins/")
+      .then(res => this.setState({ Origins: res.data }))
+      .catch(err => console.log(err)); // eslint-disable-line no-console
   }
 
   render() {
     const ChampList = this.state.ChampionPool.map(d => (
       <img
-        src={process.env.PUBLIC_URL + "/images/champions/" + d.name + ".png"}
+        src={require("./static/" + d.name + ".png")}
         class="item"
         alt={d.data.name}
       />
     ));
 
     const ItemList = this.state.ItemPool.map(d => (
-      <img src={"./public/" + d.name + ".png"} class="item" alt={d.data.name} />
+      <img
+        src={require("./static/" + d.name + ".png")}
+        class="item"
+        alt={d.data.name}
+      />
+    ));
+
+    const ClassList = this.state.Classes.map(d => (
+      <img
+        src={require("./static/" + d.name + ".png")}
+        class="item"
+        alt={d.data.name}
+      />
+    ));
+
+    const OriginList = this.state.Origins.map(d => (
+      <img
+        src={require("./static/" + d.name + ".png")}
+        class="item"
+        alt={d.data.name}
+      />
     ));
 
     return (
@@ -65,8 +97,8 @@ class App extends React.Component {
           <div class="col-sm-2">
             <h3>Origins and Classes</h3>
             <div class="mx-auto border border-dark rounded bg-dark d-sm-flex flex-wrap">
-              <img src="#" class="item" alt="An Origin" />
-              <img src="#" class="item" alt="A Class" />
+              {ClassList}
+              {OriginList}
             </div>
           </div>
         </div>
@@ -76,7 +108,7 @@ class App extends React.Component {
             <h2>Recommended Team Comp</h2>
             <h5>Items beneath each champ</h5>
             <div class="mx-auto border border-dark rounded bg-warning d-sm-flex flex-wrap">
-              <img src="#" class="item" alt="Champion" />
+              {ChampList}
             </div>
           </div>
         </div>

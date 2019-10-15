@@ -25,3 +25,25 @@ class Item(models.Model):
 
     class Meta:
         db_table = 'items'
+
+
+class Class(models.Model):
+    name = models.CharField(max_length=500)
+    data = JSONField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'class'
+
+
+class Origin(models.Model):
+    name = models.CharField(max_length=500)
+    data = JSONField()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'origin'
