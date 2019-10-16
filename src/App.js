@@ -45,37 +45,20 @@ class App extends React.Component {
   }
 
   render() {
-    const ChampList = this.state.ChampionPool.map(d => (
-      <img
-        src={require("./static/" + d.name + ".png")}
-        class="item"
-        alt={d.data.name}
-      />
-    ));
+    function createList(data) {
+      return data.map(d => (
+        <img
+          src={require("./static/" + d.name + ".png")}
+          class="item"
+          alt={d.data.name}
+        />
+      ));
+    }
 
-    const ItemList = this.state.ItemPool.map(d => (
-      <img
-        src={require("./static/" + d.name + ".png")}
-        class="item"
-        alt={d.data.name}
-      />
-    ));
-
-    const ClassList = this.state.Classes.map(d => (
-      <img
-        src={require("./static/" + d.name + ".png")}
-        class="item"
-        alt={d.data.name}
-      />
-    ));
-
-    const OriginList = this.state.Origins.map(d => (
-      <img
-        src={require("./static/" + d.name + ".png")}
-        class="item"
-        alt={d.data.name}
-      />
-    ));
+    const ChampList = createList(this.state.ChampionPool);
+    const ItemList = createList(this.state.ItemPool);
+    const ClassList = createList(this.state.Classes);
+    const OriginList = createList(this.state.Origins);
 
     return (
       <div class="container">
@@ -94,17 +77,23 @@ class App extends React.Component {
             </div>
           </div>
 
-          <div class="col-sm-2">
-            <h3>Origins and Classes</h3>
+          <div class="col-sm-1">
+            <h3>Classes</h3>
             <div class="mx-auto border border-dark rounded bg-dark d-sm-flex flex-wrap">
               {ClassList}
+            </div>
+          </div>
+
+          <div class="col-sm-1">
+            <h3>Origins</h3>
+            <div class="mx-auto border border-dark rounded bg-dark d-sm-flex flex-wrap">
               {OriginList}
             </div>
           </div>
         </div>
 
         <div class="row">
-          <div class="col-sm-10">
+          <div class="col-sm-12">
             <h2>Recommended Team Comp</h2>
             <h5>Items beneath each champ</h5>
             <div class="mx-auto border border-dark rounded bg-warning d-sm-flex flex-wrap">
