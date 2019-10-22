@@ -4,8 +4,6 @@ import PropTypes from "prop-types";
 import axios from "axios";
 
 class App extends React.Component {
-  /* Display the post feed */
-
   constructor(props) {
     super(props);
     this.state = {
@@ -13,9 +11,12 @@ class App extends React.Component {
       ItemPool: [],
       SelectedItems: [],
       Origins: [],
-      Classes: []
+      Classes: [],
+      itemSelector: 0
     };
     this.fetchData = this.fetchData.bind(this);
+    this.chooseItem = this.chooseItem.bind(this);
+    this.deselectItem = this.deselectItem.bind(this);
   }
 
   componentDidMount() {
@@ -44,6 +45,26 @@ class App extends React.Component {
       .catch(err => console.log(err)); // eslint-disable-line no-console
   }
 
+  chooseItem(e) {
+    const Item = Object.create(e);
+    const selection = this.state.itemSelector;
+    Item.selector = selection;
+    JSON.parse(JSON.stringify(Item));
+
+    this.setState({ itemSelector: this.state.itemSelector + 1 });
+
+    this.setState(prevState => ({
+      SelectedItems: [...prevState.SelectedItems, Item]
+    }));
+  }
+
+  deselectItem(e) {
+    var array = this.state.SelectedItems.filter(function(s) {
+      return s.selector !== e.selector;
+    });
+    this.setState({ SelectedItems: array });
+  }
+
   render() {
     function createList(data) {
       return data.map(d => (
@@ -55,10 +76,27 @@ class App extends React.Component {
       ));
     }
 
+    function createItemList(data, itemChooser) {
+      return data.map((d, index) => (
+        <img
+          src={require("./static/" + d.name + ".png")}
+          class="item"
+          alt={d.data.name}
+          data-item={index}
+          onClick={itemChooser.bind(this, d)}
+        />
+      ));
+    }
+
     const ChampList = createList(this.state.ChampionPool);
-    const ItemList = createList(this.state.ItemPool);
     const ClassList = createList(this.state.Classes);
     const OriginList = createList(this.state.Origins);
+
+    const ItemList = createItemList(this.state.ItemPool, this.chooseItem);
+    const SelectedItemList = createItemList(
+      this.state.SelectedItems,
+      this.deselectItem
+    );
 
     return (
       <div class="container">
@@ -73,7 +111,7 @@ class App extends React.Component {
           <div class="col-sm-5">
             <h2>Selected Items</h2>
             <div class="mx-auto border border-dark rounded bg-danger d-sm-flex flex-wrap">
-              {this.state.SelectedItems}
+              {SelectedItemList}
             </div>
           </div>
 
