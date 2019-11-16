@@ -1,26 +1,26 @@
 from rest_framework import serializers
-from .models import Champion, Item, Class, Origin
+from .models import Champion, Item, Hex, Trait
 
 
 class ChampionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Champion
-        fields = ('name', 'data')
+        fields = ('name', 'cost', 'traits')
 
 
 class ItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = Item
-        fields = ('name', 'data')
+        fields = ('id_num', 'name')
 
 
-class ClassSerializer(serializers.ModelSerializer):
+class HexSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Class
-        fields = ('name', 'data')
+        model = Hex
+        fields = ('name', 'description')
 
 
-class OriginSerializer(serializers.ModelSerializer):
+class TraitSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Origin
-        fields = ('name', 'data')
+        model = Trait
+        fields = ('name', 'innate', 'description', 'sets')

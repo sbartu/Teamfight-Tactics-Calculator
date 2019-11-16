@@ -1,25 +1,25 @@
 
 from django.contrib import admin
-from .models import Champion, Item, Class, Origin
+from .models import Champion, Item, Hex, Trait
 
 
-class ChampAdmin(admin.ModelAdmin):
-    list_display = ('name', 'data')
+class ChampionAdmin(admin.ModelAdmin):
+    list_display = ('name', 'cost', 'traits')
 
 
 class ItemAdmin(admin.ModelAdmin):
-    list_display = ('name', 'data')
+    list_display = ('id_num', 'name')
 
 
-class ClassAdmin(admin.ModelAdmin):
-    list_display = ('name', 'data')
+class HexAdmin(admin.ModelAdmin):
+    list_display = ('name', 'description')
 
 
-class OriginAdmin(admin.ModelAdmin):
-    list_display = ('name', 'data')
+class TraitAdmin(admin.ModelAdmin):
+    list_display = ('name', 'innate', 'description', 'sets')
 
 
-admin.site.register(Champion, ChampAdmin)
+admin.site.register(Champion, ChampionAdmin)
 admin.site.register(Item, ItemAdmin)
-admin.site.register(Class, ClassAdmin)
-admin.site.register(Origin, OriginAdmin)
+admin.site.register(Hex, HexAdmin)
+admin.site.register(Trait, TraitAdmin)

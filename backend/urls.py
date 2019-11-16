@@ -22,8 +22,8 @@ from tftcalc import views
 router = routers.DefaultRouter()
 router.register(r'champions', views.ChampionViewSet)
 router.register(r'items', views.ItemViewSet)
-router.register(r'classes', views.ClassViewSet)
-router.register(r'origins', views.OriginViewSet)
+router.register(r'hexes', views.HexViewSet)
+router.register(r'traits', views.TraitViewSet)
 
 urlpatterns = [
 

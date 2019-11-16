@@ -2,12 +2,13 @@ from django.db import models
 
 # Create your models here.
 from django.db import models
-from django_mysql.models import JSONField
+from django_mysql.models import ListCharField
 
 
 class Champion(models.Model):
-    name = models.CharField(max_length=500)
-    data = JSONField()
+    name = models.CharField(max_length=50)
+    cost = models.IntegerField()
+    traits = ListCharField(base_field=models.CharField(max_length=30))
 
     def __str__(self):
         return self.name
@@ -17,8 +18,8 @@ class Champion(models.Model):
 
 
 class Item(models.Model):
-    name = models.CharField(max_length=500)
-    data = JSONField()
+    id_num = models.IntegerField()
+    name = models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
@@ -27,23 +28,25 @@ class Item(models.Model):
         db_table = 'items'
 
 
-class Class(models.Model):
-    name = models.CharField(max_length=500)
-    data = JSONField()
+class Hex(models.Model):
+    name = models.CharField(max_length=30)
+    description = models.CharField(max_length=500)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        db_table = 'class'
+        db_table = 'hexes'
 
 
-class Origin(models.Model):
-    name = models.CharField(max_length=500)
-    data = JSONField()
+class Trait(models.Model):
+    name = models.CharField(max_length=50)
+    innate = models.CharField(max_length=500)
+    description = models.CharField(max_length=500)
+    sets = ListCharField(base_field=models.IntegerField())
 
     def __str__(self):
         return self.name
 
     class Meta:
-        db_table = 'origin'
+        db_table = 'traits'
